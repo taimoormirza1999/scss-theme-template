@@ -2,7 +2,12 @@
 
 ## Install Sass Globally
 
-```bash npm install -g sass (Install Globally)
+```bash
+npm install -g sass
+```
 
-# For compiling
-```bash sass assets/css/style.scss assets/css/style.css --watch 
+## For compiling
+
+```bash
+sass assets/css/style.scss assets/css/style.css --watch
+```
