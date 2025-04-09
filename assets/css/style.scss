@@ -1,0 +1,94 @@
+$primary-color: orange;
+@mixin theme-bgcolor($bg-color) {
+    background-color: $bg-color;
+}
+@mixin theme-border-color($border-color) {
+    border-color: $border-color;
+}
+@mixin common-highlighter {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  @mixin common-text-color($text-color) {
+    color: $text-color;
+  }
+// Global base styles
+body {
+    font-family: Arial, sans-serif;
+    /* Default background can be set here or in each theme */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    gap: 20px;
+  }
+    
+body{
+    font-family: Arial, sans-serif;
+    h1{
+        text-align: center;
+    }
+}
+.sections{
+    border: 2px solid;
+}
+body.theme-light {
+  
+    @include theme-bgcolor(rgb(255, 255, 255));
+    h1 {
+        @include common-text-color(black);
+      text-align: center;
+    }
+    .header {
+        @include common-highlighter;
+    }
+    footer{
+        @include common-highlighter;
+    }
+    .sections{
+       @include theme-bgcolor(rgb(255, 255, 255));
+       @include theme-border-color(rgb(0, 0, 0));
+    }
+  }
+body.theme-orange {
+    @include theme-bgcolor(rgb(255, 166, 0));
+    h1 {
+        @include common-text-color(rgb(255, 255, 255));
+    }
+    .header {
+        @include common-highlighter;
+    }
+    .main{
+        @include common-highlighter;
+    }
+    .footer{
+        @include common-highlighter;
+    }
+    .sections{
+        @include theme-bgcolor(rgb(255, 166, 0));
+        @include theme-border-color(rgb(255, 255, 255));
+     }
+  }
+body.theme-black {
+    @include theme-bgcolor(rgb(0, 0, 0));
+    h1 {
+        @include common-text-color(rgb(255, 255, 255));
+    }
+    .header {
+        @include common-highlighter;
+    }
+    .footer{
+        @include common-highlighter;
+    }
+    .sections{
+        @include theme-bgcolor(rgb(0, 0, 0));
+        @include theme-border-color(rgb(255, 255, 255));
+    }
+  }
